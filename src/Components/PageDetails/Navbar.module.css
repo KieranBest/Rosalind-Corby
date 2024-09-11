@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* navbar */
+.navbar {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    height: 10vh;
+    z-index: 1000;
+    background-color: var(--header-color);
+}
+
+/* logo  */
+.logo {
+    font-size: 30px;
+    font-family: "Dancing Script", cursive;
+}
+
+/* nav links */
+.navLink {
+    font-family: "Montserrat", sans-serif;
+
+    cursor: pointer;
+}
+
+/* ul  */
+.navMenu {
+    display: flex;
+    gap: 60px;
+}
+
+/* screen width smaller causing menu button */
+@media screen and (max-width: 780px){
+    
+    /* hamburger */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        background-color: #000000;
+        width: 20px;
+        height: 3px;
+        display: block;
+        margin: 5px;
+        -webkit-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+    }
+
+    /* adding active class to the bars  */
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* navMenu */
+    .navMenu{
+        z-index: 1000;
+        position: absolute;
+        flex-direction: column;
+        gap: 0;
+        top: 10vh;
+        left: -100%;
+        text-align: start;
+        width: 100%;
+        transition: 0.7s ease-in-out;
+        background-color: var(--header-color);
+        padding: 10px;
+        align-items: center;
+    }
+
+    .navMenu.active{
+        left: 0;
+    }
+
+    .navMenu li {
+        margin: 16px 0;
+        padding-top: 20px;
+    }
+}
