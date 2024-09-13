@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Intro } from "../Components/Services/Intro";
+import { Service } from "../Components/Services/service";
 
 export const Services = () => {
     return (
         <div>
-            <Intro />
+            < Service />
         </div>
     )
 }
